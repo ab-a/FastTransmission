@@ -9,7 +9,7 @@ $ chmod +x init.sh
 # ./init.sh
 ```
 
-Then go to http://your-ip:9091 (user : transmission, password : `$WEB-PASSWORD`). 
+Then go to http://your-ip:9091 (user : `transmission`, password : `$WEB-PASSWORD`). 
 
 For sFTP / FTP the user is `td`, the password is `$USER-PASSWORD` and the download directory is `/home/td/downloads`. 
 
