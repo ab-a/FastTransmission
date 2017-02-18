@@ -1,11 +1,15 @@
 #!/bin/sh 
 
+# Vars
+USER-PASSWORD=password
+WEB-PASSWORD= password
+
 ## Installation of Transmission Daemon and vsftpd
 apt-get update && apt-get install transmission-daemon vsftpd -y
 
 ## Manage Transmission user
 adduser td --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
-echo "td:password" | chpasswd
+echo "td:$USER-PASSWORD" | chpasswd
 usermod -a -G debian-transmission td
 mkdir /home/td/downloads
 chmod 755 -R /home/td
@@ -61,7 +65,7 @@ echo '{
     "rpc-authentication-required": true,
     "rpc-bind-address": "0.0.0.0",
     "rpc-enabled": true,
-    "rpc-password": "####",
+    "rpc-password": "$WEB-PASSWORD",
     "rpc-port": 9091,
     "rpc-url": "/transmission/",
     "rpc-username": "transmission",
